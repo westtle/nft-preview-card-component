@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="westtle">
+    <meta name="description" content="Submission for Frontend Mentor challenge: NFT Preview Card Component (HTML, CSS, JS)">
+    <meta name="keywords" content="html, css, javascript, frontend mentor, frontendmentor, frontend mentor challenge, frontend mentor challenges, nft, nft preview card, nft preview card component, frontend mentor nft preview card component">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NFT Preview Card Component</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="stylesheet" type="text/css" href="./assets/styles/style.css">
+</head>
+<body>
+    <main>
+        <div class="nft-preview-card-component">
+            <div class="image-modal" data-displayed="false"></div>
+            
+            <div class="preview">
+                <div class="preview__image-container">
+                    <img src="./assets/images/image-equilibrium.jpg" alt="An image of the Equilibrium.">
+                </div>
+                <h1 class="preview__title"><a class="preview-title__link" href="#">Equilibrium #3429</a></h1>
+                <p class="preview__paragraph">Our Equilibrium collection promotes balance and calm.</p>
+                <div class="preview__info">
+                    <div class="preview-info__price">
+                        <svg width="11" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 10.216 5.5 18 0 10.216l5.5 3.263 5.5-3.262ZM5.5 0l5.496 9.169L5.5 12.43 0 9.17 5.5 0Z" fill="currentColor"/></svg>
+                        <span>0.041 ETH</span>
+                    </div>
+                    <div class="preview-info__time">
+                        <svg width="17" height="17" xmlns="http://www.w3.org/2000/svg"><path d="M8.305 2.007a6.667 6.667 0 1 0 0 13.334 6.667 6.667 0 0 0 0-13.334Zm2.667 7.334H8.305a.667.667 0 0 1-.667-.667V6.007a.667.667 0 0 1 1.334 0v2h2a.667.667 0 0 1 0 1.334Z" fill="currentColor"/></svg>
+                        <span>3 days left</span>
+                    </div>
+                </div>
+                <hr class="preview__line">
+                <div class="preview__creator">
+                    <img class="preview-creator__picture" src="./assets/images/image-avatar.png" alt="An image of the creator.">
+                    <span class="preview-creator__text">Creation of <a class="preview-creator__link" href="#">Jules Wyvern</a></span>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="attribution">
+            <a href="https://www.frontendmentor.io/challenges/nft-preview-card-component-SbdUL_w0U" target="_blank">Challenge</a> -
+            <a href="https://github.com/westtle" target="_blank">westtle</a> -
+            <a href="https://github.com/westtle/nft-preview-card-component" target="_blank">Repository</a>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="./assets/scripts/script.js"></script>
+</body>
+</html>

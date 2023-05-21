@@ -1,0 +1,212 @@
+:root {
+	--font-outfit: "Outfit", sans-serif;
+	--font-size-paragraph: 1.125rem;
+
+	/* Primary */
+	--soft-blue: 215, 51%, 70%;
+	--cyan: 178, 100%, 50%;
+
+	/* Neutral */
+	--white: 0, 0%, 100%;
+	--dark-blue: 215, 32%, 27%; /* Line */
+	--darkish-blue: 216, 50%, 16%; /* Preview Background */
+	--very-dark-blue: 217, 54%, 11%; /* Main Background */
+}
+
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img,
+svg {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+body {
+	--font-primary: var(--font-outfit);
+	--font-size-primary: var(--font-size-paragraph);
+	--font-size-secondary: 1rem;
+
+	--color-primary: hsl(var(--soft-blue));
+	--color-secondary: hsl(var(--white));
+	--color-tertiary: hsl(var(--cyan)); /* Mainly used for hover */
+
+	--background-color-body: hsl(var(--very-dark-blue));
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-primary);
+	background-color: var(--background-color-body);
+	min-height: 100vh;
+	padding-block: 2rem;
+	padding-inline: 1rem;
+	font-family: var(--font-primary);
+	font-size: var(--font-size-primary);
+}
+
+/* Image Modal / When The Image Is Clicked */
+
+.image-modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: hsla(0, 0%, 0%, 0.6);
+	padding: 2rem;
+	opacity: 0;
+	transition: all ease-in-out 0.25s;
+	z-index: -1;
+
+	position: fixed;
+	inset: 0;
+}
+
+.image-modal img {
+	max-height: 70%;
+}
+
+.image-modal[data-displayed="true"] {
+	opacity: 1;
+	z-index: 100;
+}
+
+/* Preview */
+
+.preview {
+	--background-color-preview: hsl(var(--darkish-blue));
+
+	background-color: var(--background-color-preview);
+	border-radius: 0.9375rem;
+	max-width: 21.875rem;
+	padding: 1.5rem;
+	box-shadow: 0 0.875rem 0.75rem 0.875rem hsla(0, 0%, 0%, 0.1);
+}
+
+.preview__image-container {
+	border-radius: 0.5rem;
+	margin-block-end: 1.5rem;
+	cursor: pointer;
+	overflow: hidden;
+
+	position: relative;
+}
+
+.preview__image-container::before,
+.preview__image-container::after {
+	content: "";
+	opacity: 0;
+	transition: opacity ease-in-out 0.12s;
+
+	position: absolute;
+	inset: 0;
+}
+
+.preview__image-container::before { background-color: var(--color-tertiary); }
+.preview__image-container::after { background: url("../images/icon-view.svg") no-repeat center; }
+
+.preview__title {
+	color: var(--color-secondary);
+	margin-block-end: 1.0625rem;
+	font-size: 1.375rem;
+	font-weight: 600;
+}
+
+.preview-title__link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.preview__paragraph {
+	margin-block-end: 1.4375rem;
+	font-weight: 300;
+	line-height: 1.45;
+}
+
+.preview__info {
+	display: flex;
+	justify-content: space-between;
+	margin-block-end: 1.5rem;
+}
+
+.preview-info__price,
+.preview-info__time {
+	display: flex;
+	align-items: center;
+	font-size: var(--font-size-secondary);
+}
+
+.preview-info__price {
+	color: var(--color-tertiary);
+	gap: 0.40625rem;
+	font-weight: 600;
+}
+
+.preview-info__time {
+	gap: 0.5rem;
+	margin-inline-end: 0.125rem;
+	font-weight: 400;
+}
+
+.preview__line {
+	--color-line: hsl(var(--dark-blue));
+
+	border: none;
+	border-block-start: 0.0625rem solid var(--color-line);
+	margin-block-end: 0.9375rem;
+}
+
+.preview__creator {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-block-end: 0.5rem;
+	font-size: var(--font-size-secondary);
+}
+
+.preview-creator__picture {
+	border: 0.0625rem solid var(--color-secondary);
+	border-radius: 100%;
+	max-width: 2.0625rem;
+	margin-block-start: 0.0625rem;
+}
+
+.preview-creator__link {
+	color: var(--color-secondary);
+	margin-inline-start: 0.125rem;
+	text-decoration: none;
+}
+
+/* Media Query */
+
+@media (hover:hover) {
+	.preview-title__link:hover,
+	.preview-title__link:focus-visible,
+	.preview-creator__link:hover,
+	.preview-creator__link:focus-visible {
+		color: var(--color-tertiary);
+	}
+
+	.preview__image-container:hover::after {
+		opacity: 1;
+	}
+	.preview__image-container:hover::before {
+		opacity: 0.5;
+	}
+}
+
+/* Attribution / Link */
+
+.attribution {
+	margin-block-start: 0.656rem;
+	font-size: 0.6875rem;
+	text-align: center;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
